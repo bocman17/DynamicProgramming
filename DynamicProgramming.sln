@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProgramming", "DynamicProgramming\DynamicProgramming.csproj", "{BE8D5CDA-15BB-469C-9FB7-335491D59F09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputDP", "OutputDP\OutputDP.csproj", "{F844C46F-047E-405E-980E-12F5E0AC6219}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE8D5CDA-15BB-469C-9FB7-335491D59F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8D5CDA-15BB-469C-9FB7-335491D59F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8D5CDA-15BB-469C-9FB7-335491D59F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8D5CDA-15BB-469C-9FB7-335491D59F09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F844C46F-047E-405E-980E-12F5E0AC6219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F844C46F-047E-405E-980E-12F5E0AC6219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F844C46F-047E-405E-980E-12F5E0AC6219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F844C46F-047E-405E-980E-12F5E0AC6219}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {059A6782-344F-4863-AD90-E0C57BC2F4BB}
+	EndGlobalSection
+EndGlobal
