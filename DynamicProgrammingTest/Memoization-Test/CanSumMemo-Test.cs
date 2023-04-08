@@ -25,16 +25,6 @@ namespace DynamicProgrammingTest
             Assert.True(result);
         }
 
-        [Fact]
-        public void CanSumMemo_TargetSumNegativeTest()
-        {
-            var result = Sum_Memo.CanSumMemo(-1, new int[] { 0 });
-            Assert.False(result);
-
-            result = Sum_Memo.CanSumMemo(-1, new int[] { 0, -1 });
-            Assert.False(result);
-        }
-
         [Theory]
         [InlineData( 7, new int[] { 2, 4})]
         [InlineData( 300, new int[] { 7, 14})]

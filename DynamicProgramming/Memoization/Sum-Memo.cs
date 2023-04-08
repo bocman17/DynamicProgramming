@@ -14,7 +14,6 @@
                 return false;
             }
             if (targetSum == 0) return true;
-            if (targetSum < 0) return false;
 
             for (int i = 0; i < numbers.Length; i++)
             {

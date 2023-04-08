@@ -48,6 +48,5 @@ namespace DynamicProgrammingTest
             var result = Construct_Memo.CanConstructMemo(target, wordBank);
             Assert.False(result);
         }
-
     }
 }
