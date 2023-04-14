@@ -1,4 +1,4 @@
-namespace DynamicProgrammingTest
+namespace DynamicProgramming.Memoization_Test
 {
     public class FibonacciMemo_Test
     {

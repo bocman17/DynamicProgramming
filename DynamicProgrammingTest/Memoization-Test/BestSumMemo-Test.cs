@@ -1,7 +1,4 @@
-using DynamicProgramming.Memoization;
-using Xunit;
-
-namespace DynamicProgrammingTest
+namespace DynamicProgramming.Memoization_Test
 {
     public class BestSumMemo_Test
     {

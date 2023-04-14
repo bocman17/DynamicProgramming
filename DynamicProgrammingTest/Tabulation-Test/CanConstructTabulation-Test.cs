@@ -1,6 +1,6 @@
-﻿namespace DynamicProgrammingTest.Tabulation_Test
+﻿namespace DynamicProgramming.Tabulation_Test
 {
-    public class CanConstructTabulation
+    public class CanConstructTabulation_Test
     {
         [Fact]
         public void CanConstructTab_TargetStringIsEmptyTest()

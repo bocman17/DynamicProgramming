@@ -1,9 +1,6 @@
-using DynamicProgramming.Memoization;
-using Xunit;
-
-namespace DynamicProgrammingTest
+namespace DynamicProgramming.Memoization_Test
 {
-    public class GridTraveler_Test
+    public class GridTravelerMemo_Test
     {
         [Fact]
         public void GridTravelerMemo_BaseTest()

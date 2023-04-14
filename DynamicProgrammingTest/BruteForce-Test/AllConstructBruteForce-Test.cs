@@ -1,11 +1,11 @@
-namespace DynamicProgramming.Memoization_Test
+﻿namespace DynamicProgramming.BruteForce_Test
 {
-    public class AllConstructMemo_Test
+    public class AllConstructBruteForce_Test
     {
         [Fact]
-        public void AllConstructMemo_TargetStringIsEmptyTest()
+        public void AllConstruct_TargetStringIsEmptyTest()
         {
-            var result = Construct_Memo.AllConstructMemo("", new string[] { "abc", "def" });
+            var result = Construct.AllConstruct("", new string[] { "abc", "def" });
             List<List<string>> emptyList = new()
             {
                 new List<string>()
@@ -14,16 +14,16 @@ namespace DynamicProgramming.Memoization_Test
         }
 
         [Fact]
-        public void AllConstructMemo_WordBankIsEmptyTest()
+        public void AllConstruct_WordBankIsEmptyTest()
         {
-            var result = Construct_Memo.AllConstructMemo("abc", Array.Empty<string>());
+            var result = Construct.AllConstruct("abc", Array.Empty<string>());
             Assert.Equal(new List<List<string>>(), result);
         }
 
         [Fact]
-        public void AllConstructMemo_TargetStringAndWordBankIsEmptyTest()
+        public void AllConstruct_TargetStringAndWordBankIsEmptyTest()
         {
-            var result = Construct_Memo.AllConstructMemo("", Array.Empty<string>());
+            var result = Construct.AllConstruct("", Array.Empty<string>());
             List<List<string>> emptyList = new()
             {
                 new List<string>()
@@ -32,9 +32,9 @@ namespace DynamicProgramming.Memoization_Test
         }
 
         [Fact]
-        public void AllConstructMemo_AssertMultipleTest()
+        public void AllConstruct_AssertMultipleTest()
         {
-            var result = Construct_Memo.AllConstructMemo("purple",
+            var result = Construct.AllConstruct("purple",
                 new string[] { "purp", "p", "ur", "le", "purpl" });
             List<List<string>> expected1 = new()
             {
@@ -43,7 +43,7 @@ namespace DynamicProgramming.Memoization_Test
             };
             Assert.Equal(expected1, result);
 
-            result = Construct_Memo.AllConstructMemo("abcdef",
+            result = Construct.AllConstruct("abcdef",
                 new string[] { "ab", "abc", "cd", "def", "abcd", "ef", "c" });
             List<List<string>> expected2 = new()
             {
@@ -54,12 +54,8 @@ namespace DynamicProgramming.Memoization_Test
             };
             Assert.Equal(expected2, result);
 
-            result = Construct_Memo.AllConstructMemo("skateboard",
+            result = Construct.AllConstruct("skateboard",
                 new string[] { "bo", "rd", "ate", "t", "ska", "sk", "boar" });
-            Assert.Equal(new List<List<string>>(), result);
-
-            result = Construct_Memo.AllConstructMemo("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaz",
-                new string[] { "a", "aa", "aaa", "aaaa", "aaaaa" });
             Assert.Equal(new List<List<string>>(), result);
         }
     }

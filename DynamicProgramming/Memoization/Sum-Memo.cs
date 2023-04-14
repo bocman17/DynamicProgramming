@@ -2,38 +2,52 @@
 {
     public static class Sum_Memo
     {
-        public static bool CanSumMemo(int targetSum, int[]? numbers, Dictionary<int, bool>? memo = null)
+        public static bool CanSumMemo(int targetSum, int[] numbers)
         {
-            memo ??= new Dictionary<int, bool>();
-            if (memo.TryGetValue(targetSum, out _))
+            Dictionary<int, bool> memo = new();
+            return CanSum(targetSum, numbers, memo);
+        }
+        private static bool CanSum(int targetSum, int[] numbers, Dictionary<int, bool> memo)
+        {
+            if (memo.TryGetValue(targetSum, out bool value))
             {
-                return memo[targetSum];
+                return value;
             }
-            if (numbers is null || numbers.Length == 0)
+            if (targetSum == 0)
+            {
+                return true;
+            }
+            if (targetSum < 0)
             {
                 return false;
             }
-            if (targetSum == 0) return true;
 
-            for (int i = 0; i < numbers.Length; i++)
+            foreach (int num in numbers)
             {
-                int remainder = targetSum - numbers[i];
-                if (CanSumMemo(remainder, numbers, memo))
+                int remainder = targetSum - num;
+                if (CanSum(remainder, numbers, memo))
                 {
                     memo[targetSum] = true;
                     return true;
-                };
+                }
             }
+
             memo[targetSum] = false;
             return false;
         }
-
-        public static List<int>? HowSumMemo(int targetSum, int[]? numbers, Dictionary<int, List<int>?>? memo = null)
+        public static List<int>? HowSumMemo(int targetSum, int[] numbers)
         {
-            memo ??= new Dictionary<int, List<int>?>();
-            if (memo.TryGetValue(targetSum, out _))
+            Dictionary<int, List<int>?>? memo = new();
+            return HowSum(targetSum, numbers, memo);
+        }
+        private static List<int>? HowSum(int targetSum, int[]? numbers, Dictionary<int, List<int>?>? memo)
+        {
+            if (memo is not null)
             {
-                return memo[targetSum];
+                if (memo.TryGetValue(targetSum, out _))
+                {
+                    return memo[targetSum];
+                }
             }
             if (numbers is null || numbers.Length <= 0)
             {
@@ -51,25 +65,37 @@
             for (int i = 0; i < numbers.Length; i++)
             {
                 int remainder = targetSum - numbers[i];
-                var remainderResult = HowSumMemo(remainder, numbers, memo);
+                var remainderResult = HowSum(remainder, numbers, memo);
                 if (remainderResult != null)
                 {
                     remainderResult.Add(numbers[i]);
-                    memo[targetSum] = remainderResult;
-                    return memo[targetSum];
+                    if (memo is not null)
+                    {
+                        memo[targetSum] = remainderResult;
+                        return memo[targetSum];
+                    }
                 }
             }
-
-            memo[targetSum] = null;
+            if (memo is not null)
+            {
+                memo[targetSum] = null;
+            }
             return null;
         }
 
-        public static List<int>? BestSumMemo(int targetSum, int[]? numbers, Dictionary<int, List<int>?>? memo = null)
+        public static List<int>? BestSumMemo(int targetSum, int[] numbers)
         {
-            memo ??= new Dictionary<int, List<int>?>();
-            if (memo.TryGetValue(targetSum, out _))
+            Dictionary<int, List<int>?>? memo = new();
+            return BestSum(targetSum, numbers, memo);
+        }
+        private static List<int>? BestSum(int targetSum, int[]? numbers, Dictionary<int, List<int>?>? memo = null)
+        {
+            if (memo is not null)
             {
-                return memo[targetSum];
+                if (memo.TryGetValue(targetSum, out _))
+                {
+                    return memo[targetSum];
+                }
             }
             List<int>? shortestComb = null;
             if (numbers is null || numbers.Length <= 0)
@@ -87,7 +113,7 @@
             for (int i = 0; i < numbers.Length; i++)
             {
                 int remainder = targetSum - numbers[i];
-                var remainderCombination = BestSumMemo(remainder, numbers, memo);
+                var remainderCombination = BestSum(remainder, numbers, memo);
 
                 if (remainderCombination is not null)
                 {
@@ -102,7 +128,10 @@
                     }
                 }
             }
-            memo[targetSum] = shortestComb;
+            if (memo is not null)
+            {
+                memo[targetSum] = shortestComb;
+            }
             return shortestComb;
         }
     }

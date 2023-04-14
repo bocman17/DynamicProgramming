@@ -2,19 +2,23 @@
 {
     public static class Fibonacci_Memo
     {
-        public static long FibMemo(int n, Dictionary<int, long>? memo = null)
+        static readonly Dictionary<int, long> _memo = new();
+        public static long FibMemo(int n)
         {
-            memo ??= new() { { 0, 0 }, { 1, 1 } };
-            if (memo.TryGetValue(n, out long _))
+            if (_memo.TryGetValue(n, out long _))
             {
-                return memo[n];
+                return _memo[n];
+            }
+            if(n == 0)
+            {
+                return 0;
             }
             if (n <= 2)
             {
                 return 1;
             }
-            memo[n] = FibMemo(n - 1, memo) + FibMemo(n - 2, memo);
-            return memo[n];
+            _memo[n] = FibMemo(n - 1) + FibMemo(n - 2);
+            return _memo[n];
         }
     }
 }

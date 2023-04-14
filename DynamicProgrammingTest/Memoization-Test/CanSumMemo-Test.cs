@@ -1,7 +1,4 @@
-using DynamicProgramming.Memoization;
-using Xunit;
-
-namespace DynamicProgrammingTest
+namespace DynamicProgramming.Memoization_Test
 {
     public class CanSumMemo_Test
     {
@@ -9,10 +6,7 @@ namespace DynamicProgrammingTest
         public void CanSumMemo_BaseTest()
         {
             var result = Sum_Memo.CanSumMemo(0, Array.Empty<int>());
-            Assert.False(result);
-
-            result = Sum_Memo.CanSumMemo(0, null);
-            Assert.False(result);
+            Assert.True(result);
         }
 
         [Fact]
@@ -27,7 +21,7 @@ namespace DynamicProgrammingTest
 
         [Theory]
         [InlineData( 7, new int[] { 2, 4})]
-        [InlineData( 300, new int[] { 7, 14})]
+        [InlineData(300, new int[] { 7, 14 })]
 
         public void CanSumMemo_CalculateFalseTest(int m, int[] nums )
         {

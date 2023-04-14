@@ -1,6 +1,6 @@
-﻿namespace DynamicProgrammingTest.Tabulation_Test
+﻿namespace DynamicProgramming.Tabulation_Test
 {
-    public class CanSumTabulation
+    public class CanSumTabulation_Test
     {
         [Fact]
         public void CanSumTab_ZeroTest()

@@ -1,4 +1,4 @@
-﻿namespace DynamicProgrammingTest.Tabulation_Test
+﻿namespace DynamicProgramming.Tabulation_Test
 {
     public class CountConstructTabulation_Test
     {

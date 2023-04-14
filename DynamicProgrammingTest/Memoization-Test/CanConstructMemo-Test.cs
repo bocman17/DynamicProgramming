@@ -1,8 +1,4 @@
-using DynamicProgramming;
-using DynamicProgramming.Memoization;
-using Xunit;
-
-namespace DynamicProgrammingTest
+namespace DynamicProgramming.Memoization_Test
 {
     public class CanConstructMemo_Test
     {
